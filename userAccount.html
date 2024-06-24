@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en, ru">
+<head>
+    <!-- Метаинформация и стили -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/user-account/style.css">
+    <title>Аккаунт | Flixion</title>
+</head>
+<body>
+    <!-- Контейнер для содержания страницы -->
+    <div class="container">
+        <!-- Верхнее меню -->
+        <div class="menu-top">
+            <img class="menu-top__logo" src="img/logo.svg">
+            <div class="menu-top__elements">
+                <span class="menu-top__elements-option selected-computer"></span>
+                <span class="menu-top__elements-option balance">Баланс: 0₽</span>
+                <span class="menu-top__elements-option remaining-time">Оставшееся время: 00:00</span>
+                <img class="menu-top__elements-logout" src="img/log-out.svg">
+            </div>
+        </div>
+
+        <!-- Панель оплаты -->
+        <div class="payment">
+            <div class="payment__middle-panel">
+                <div class="payment__middle-panel__elements">
+                    <span class="payment__middle-panel__elements-title">Активный пакет: Поминутный</span>
+                    <span class="payment__middle-panel__elements-title game">Вы играете в: </span>
+                    <a href="#" class="payment__middle-panel__elements-button exit-game">Выйти</a>
+                </div>
+            </div>
+            <div class="payment__large-panel">
+                <div class="payment__large-panel__elements">
+                    <span class="payment__large-panel__elements-title">Пакет «Дефолт»</span>
+                    <span class="payment__large-panel__elements-title">Стоимость:</span>
+                    <span class="payment__large-panel__elements-title"><span class="price">210</span> ₽</span>
+                    <span class="payment__large-panel__elements-title"></span>
+                    <a href="#" class="payment__large-panel__elements-button" data-tariff-id="1">Купить</a>
+                </div>
+                <div class="payment__large-panel__elements">
+                    <span class="payment__large-panel__elements-title">Пакет «Лунатик»</span>
+                    <span class="payment__large-panel__elements-title">Стоимость:</span>
+                    <span class="payment__large-panel__elements-title"><span class="price">370</span> ₽</span>
+                    <a href="#" class="payment__large-panel__elements-button" data-tariff-id="2">Купить</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель опций -->
+        <div class="option">
+            <div class="option__small-panel">
+                <div class="option__small-panel__elements contact-admin">
+                    <img class="option__small-panel__elements-icon" src="img/info.svg">
+                    <span class="option__small-panel__elements-title">Обратиться к администрации</span>
+                </div>
+            </div>
+            <div class="option__small-panel">
+                <div class="option__small-panel__elements choose-game">
+                    <img class="option__small-panel__elements-icon" src="img/gamepad.svg">
+                    <span class="option__small-panel__elements-title">Выбрать игру<br> из списка</span>
+                </div>
+            </div>
+            <div class="option__small-panel choose-computer">
+                <div class="option__small-panel__elements">
+                    <img class="option__small-panel__elements-icon" src="img/lobby-map.svg">
+                    <span class="option__small-panel__elements-title">Пересесть за другой компьютер</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для выбора компьютера -->
+    <div id="computerModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__content-close">&times;</span>
+            <h2>Выберите компьютер</h2>
+            <ul id="computerList"></ul>
+        </div>
+    </div>
+
+    <!-- Модальное окно для выбора игры -->
+    <div id="gameModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__content-close">&times;</span>
+            <h2>Выберите игру</h2>
+            <ul id="gameList"></ul>
+        </div>
+    </div>
+
+    <!-- Модальное окно предупреждения -->
+    <div id="warningModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__content-close">&times;</span>
+            <h2>Предупреждение!</h2>
+            <p class="modal__content-text"></p>
+        </div>
+    </div>
+
+    <!-- Модальное окно для обращения к администрации -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal__content">
+            <span class="modal__content-close">&times;</span>
+            <h2>Обратиться к администрации</h2>
+            <form class="modal__content-form" id="feedbackForm">
+                <label class="modal__content-text" for="issueType">Выберите проблему:</label>
+                <select id="issueType" name="issueType">
+                    <option value="Техническая проблема">Техническая проблема</option>
+                    <option value="Проблема с оплатой">Проблема с оплатой</option>
+                    <option value="Общий вопрос">Общий вопрос</option>
+                </select>
+                <label class="modal__content-form-label" for="comment">Комментарий:</label>
+                <textarea class="modal__content-form-textarea" id="comment" name="comment" required></textarea>
+                <button class="modal__content-form-button" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="module" src="./src/js/userAccount.js"></script>
+</html>

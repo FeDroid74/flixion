@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en, ru">
+  <head>
+    <!-- Метаинформация и стили -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/admin-panel/style.css">
+    <title>Панель администратора | Flixion</title>
+  </head>
+  <body>
+    <!-- Верхнее меню -->
+    <div class="menu-top">
+      <a href="./index.html"><img class="menu-top__logo" src="img/logo.svg"></a>
+      <div class="menu-top__elements">
+        <span class="menu-top__elements-title">Администратор: </span>
+        <img class="menu-top__elements-icon" src="img/log-out.svg">
+      </div>
+    </div>
+
+    <!-- Левое меню -->
+    <div class="menu-left">
+      <div class="menu-left__category main" onclick="showComputerTable()">
+        <img class="menu-left__category-icon" src="img/laptop-minimal.svg">
+        <span class="menu-left__category-title">Компьютеры</span>
+      </div>
+      <div class="menu-left__category" onclick="showUserTable()">
+        <img class="menu-left__category-icon" src="img/user-minimal.svg">
+        <span class="menu-left__category-title">Пользователи</span>
+      </div>
+      <div class="menu-left__category" onclick="showGameTable()">
+        <img class="menu-left__category-icon" src="img/gamepad-minimal.svg">
+        <span class="menu-left__category-title">Игры</span>
+      </div>
+      <div class="menu-left__category" onclick="showEquipmentTable()">
+        <img class="menu-left__category-icon" src="img/memory-computer-minimal.svg">
+        <span class="menu-left__category-title">Оборудование</span>
+      </div>
+      <div class="menu-left__category" onclick="showRoomTable()">
+        <img class="menu-left__category-icon" src="img/room-minimal.svg">
+        <span class="menu-left__category-title">Залы</span>
+      </div>
+      <div class="menu-left__category" onclick="showTariffTable()">
+        <img class="menu-left__category-icon" src="img/list-minimal.svg">
+        <span class="menu-left__category-title">Тарифы</span>
+      </div>
+      <div class="menu-left__category" onclick="showFeedbackTable()">
+        <img class="menu-left__category-icon" src="img/book-minimal.svg">
+        <span class="menu-left__category-title">Обращения</span>
+      </div>
+      <div class="menu-left__statistic">
+        <hr class="menu-left__line">
+        <div class="menu-left__options">
+          <span class="menu-left__options-title red">Заняты: 0</span>
+          <span class="menu-left__options-title green">Свободны: 0</span>
+        </div>
+        <hr class="menu-left__line">
+        <div class="menu-left__options">
+          <span class="menu-left__options-title">Включены: 0</span>
+          <span class="menu-left__options-title grey">Выключены: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Область отображения данных -->
+    <div class="display">
+      <!-- Таблица компьютеров -->
+      <table id="computerTable">
+        <thead>
+          <tr>
+            <th>Имя компьютера</th>
+            <th>Зал</th>
+            <th>Статус</th>
+            <th>Бронь</th>
+            <th>Оборудование</th>
+            <th>Выбран пользователями</th>
+            <th>Панель редактирования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица пользователей -->
+      <table id="userTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Имя пользователя</th>
+            <th>Телефон</th>
+            <th>Эл. Почта</th>
+            <th>Статус</th>
+            <th>Баланс</th>
+            <th>Дата регистрации</th>
+            <th>Панель редактирования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица оборудования -->
+      <table id="equipmentTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Тип</th>
+                <th>Графическая карта</th>
+                <th>Процессор</th>
+                <th>ОЗУ</th>
+                <th>Материнская плата</th>
+                <th>Монитор</th>
+                <th>Клавиатура</th>
+                <th>Мышь</th>
+                <th>Панель редактирования</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица игр -->
+      <table id="gameTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Разработчик</th>
+            <th>Издатель</th>
+            <th>Была открыта (раз)</th>
+            <th>Панель редактирования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица залов -->
+      <table id="roomTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Название зала</th>
+                <th>Стоимость</th>
+                <th>Панель редактирования</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица тарифов -->
+      <table id="tariffTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Длительность</th>
+            <th>Выбран пользователями</th>
+            <th>Панель редактирования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица обращений -->
+      <table id="feedbackTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Пользователь</th>
+            <th>Тип проблемы</th>
+            <th>Комментарий</th>
+            <th>Дата</th>
+            <th>Панель редактирования</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица пользовательских тарифов -->
+      <table id="userTariffTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Пользователь</th>
+            <th>Тариф</th>
+            <th>Дата выбора</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+      <!-- Таблица использования компьютеров пользователями -->
+      <table id="userComputerTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Пользователь</th>
+                <th>Компьютер</th>
+                <th>Начало использования</th>
+                <th>Конец использования</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Данные будут загружены сюда -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Модальное окно для редактирования компьютера -->
+    <div id="computerModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="computerForm">
+              <input type="hidden" id="computerId">
+              <label for="computerName">Имя компьютера:</label>
+              <input type="text" id="computerName" name="computerName" required>
+              <label for="computerRoom">Зал:</label>
+              <input type="text" id="computerRoom" name="computerRoom" required>
+              <label for="computerStatus">Статус:</label>
+              <select id="computerStatus" name="computerStatus" required>
+                <option value="0">Выключен</option>
+                <option value="1">Включен</option>
+              </select>
+              <label for="computerBook">Бронь:</label>
+              <select id="computerBook" name="computerBook" required>
+                <option value="0">Свободен</option>
+                <option value="1">Занят</option>
+              </select>
+              <button type="submit">Сохранить данные</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для редактирования пользователя -->
+    <div id="userModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close" id="closeUserModalButton">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="userForm">
+              <input type="hidden" id="userId">
+              <div>
+                  <label>Имя пользователя:</label>
+                  <input type="text" id="userName" required>
+              </div>
+              <div>
+                  <label>Телефон:</label>
+                  <input type="text" id="userTelnum" required>
+              </div>
+              <div>
+                  <label>Эл. Почта:</label>
+                  <input type="email" id="userEmail" required>
+              </div>
+              <div>
+                  <label>Статус:</label>
+                  <select id="userRole" required>
+                      <option value="0">Клиент</option>
+                      <option value="1">Администратор</option>
+                  </select>
+              </div>
+              <div>
+                  <label>Баланс:</label>
+                  <input type="text" id="userBalance" required>
+              </div>
+              <div class="modal__content-action">
+                  <button type="submit">Сохранить данные</button>
+              </div>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для редактирования игры -->
+    <div id="gameModal" class="modal">
+      <div class="modal__content">
+          <span id="closeModalButton" class="modal__content-close">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="gameForm">
+              <input type="hidden" id="gameId" name="gameId">
+              <div>
+                  <label for="gameName">Название</label>
+                  <input type="text" id="gameName" name="gameName" required>
+              </div>
+              <div>
+                  <label for="gameDescription">Описание</label>
+                  <textarea id="gameDescription" name="gameDescription" required></textarea>
+              </div>
+              <div>
+                  <label for="gameDeveloper">Разработчик</label>
+                  <input type="text" id="gameDeveloper" name="gameDeveloper" required>
+              </div>
+              <div>
+                  <label for="gamePublisher">Издатель</label>
+                  <input type="text" id="gamePublisher" name="gamePublisher" required>
+              </div>
+              <button type="submit">Сохранить данные</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для оборудования -->
+    <div id="equipmentModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close">&times;</span>
+          <h2>Панель редактирования</h2>
+          <form id="equipmentForm">
+              <input type="hidden" id="equipmentId">
+              <label for="equipmentType">Тип:</label>
+              <input type="text" id="equipmentType" required>
+              <label for="equipmentGraphicscard">Видеокарта:</label>
+              <input type="text" id="equipmentGraphicscard" required>
+              <label for="equipmentCpu">Процессор:</label>
+              <input type="text" id="equipmentCpu" required>
+              <label for="equipmentRam">ОЗУ:</label>
+              <input type="text" id="equipmentRam" required>
+              <label for="equipmentMotherboard">Материнская плата:</label>
+              <input type="text" id="equipmentMotherboard" required>
+              <label for="equipmentMonitor">Монитор:</label>
+              <input type="text" id="equipmentMonitor" required>
+              <label for="equipmentKeyboard">Клавиатура:</label>
+              <input type="text" id="equipmentKeyboard" required>
+              <label for="equipmentMouse">Мышь:</label>
+              <input type="text" id="equipmentMouse" required>
+              <button type="submit">Сохранить</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для редактирования зала -->
+    <div id="roomModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="roomForm">
+              <input type="hidden" id="roomId" name="roomId">
+              <label for="roomName">Название зала:</label>
+              <input type="text" id="roomName" name="roomName" required>
+              <label for="roomCost">Стоимость:</label>
+              <input type="number" id="roomCost" name="roomCost" step="0.01" required>
+              <button type="submit">Сохранить данные</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для редактирования тарифа -->
+    <div id="tariffModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close" id="closeModalButton">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="tariffForm">
+              <input type="hidden" id="tariffId">
+              <div>
+                  <label>Название:</label>
+                  <input type="text" id="tariffName">
+              </div>
+              <div>
+                  <label>Цена:</label>
+                  <input type="text" id="tariffPrice">
+              </div>
+              <div>
+                  <label>Длительность:</label>
+                  <input type="text" id="tariffDuration">
+              </div>
+              <button type="submit">Сохранить данные</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для редактирования обращения -->
+    <div id="feedbackModal" class="modal">
+      <div class="modal__content">
+          <span class="modal__content-close">&times;</span>
+          <h2 class="modal__content-title">Панель редактирования</h2>
+          <form id="feedbackForm">
+              <input type="hidden" id="feedbackId">
+              <label for="feedbackUsername">Пользователь:</label>
+              <input type="text" id="feedbackUsername" name="feedbackUsername" required>
+              <label for="feedbackIssueType">Тип проблемы:</label>
+              <input type="text" id="feedbackIssueType" name="feedbackIssueType" required>
+              <label for="feedbackComment">Комментарий:</label>
+              <input type="text" id="feedbackComment" name="feedbackComment" required>
+              <label for="feedbackDate">Дата:</label>
+              <input type="text" id="feedbackDate" name="feedbackDate" required>
+              <button type="submit">Сохранить данные</button>
+          </form>
+      </div>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script type="module" src="./src/js/adminPanel.js"></script>
+  </body>
+</html>

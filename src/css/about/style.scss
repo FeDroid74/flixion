@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;600;700&display=swap');
+
+@import "../mixins/modal";
+@import "../mixins/header";
+@import "../mixins/footer";
+
+* {
+	margin: 0;
+	padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 74px;
+    font-weight: 600;
+}
+
+span {
+    color: #07AFEF;
+    font-weight: 500; 
+}
+
+.lines {
+    margin: 107px 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+	max-width: 1180px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 12px;
+}
+
+.info-block{
+    margin-top: 44px;
+}
+
+.info-blockitem {
+    margin-top: 110px;
+
+    &__pic {
+        filter: drop-shadow(0 0 60px rgba(7, 175, 239, 0.3));
+        float: left;
+    }
+
+    &__textblock {
+        float: right;
+        margin-right: 90px;
+        padding-top: 84px;
+    }
+
+    &__text {
+        width: 450px;
+        font-size: 23px;
+        padding-bottom: 30px;
+        text-align: center;
+        font-weight: 400;
+    }
+    
+    &__text span{
+        font-weight: 600;
+    }
+}
+
+.adv-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    &__item {
+        width: 175px;
+        text-align: center;
+    }
+
+    &__item-icon {
+        filter: drop-shadow(0 0 40px rgba(7, 175, 239, 0.7));
+    }
+
+    &__item-title {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+}
+
+.adv-list:last-child {
+    width: 800px;
+    margin-bottom: 0;
+    margin-left: 178px;
+}
+
+@media all and (max-width: 534px) {
+    .container {
+        max-width: 534px;
+    }
+  
+    h2 {
+        font-size: 32px;
+    }
+  
+    span {
+        font-size: 14px;
+    }
+  
+    .menu {
+        position: relative;
+        width: 300px;
+        margin-left: 22px;
+        z-index: 2;
+
+        &-button {
+            display: none;
+        }
+
+        &-burger {
+            margin-top: -34px;
+            display: block;
+        }
+
+        &-burger-element {
+            display: none;
+        }
+
+        &-mobile {
+            &.show {
+                position: absolute;
+                display: block;
+                transform: translateY(0);
+                left: 0;
+                width: 220%;
+                height: 440px;
+                z-index: 1;
+                padding: 10px;
+            }
+
+            &-top {
+                margin-top: 10px;
+                position: absolute;
+            }
+        }
+    }
+
+    .logo {
+        width: 180px;
+        height: 30px;
+    }
+
+    .info-blockitem {
+        margin-top: 30px;
+        margin-left: 20px;
+
+        &__pic {
+            margin-left: 22px;
+            width: 275px;
+            height: 420px;
+        }
+
+        &__text {
+            width: 280px;
+            font-size: 14px;
+        }
+
+        &__textblock {
+            margin-right: 56px;
+        }
+    }
+
+    .adv-list {
+        width: 300px;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        margin-left: 26px;
+
+        &__item {
+            width: 140px;
+            margin-bottom: 40px;
+        }
+
+        &__item-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        &__item-title {
+            font-size: 12px;
+        }
+    }
+
+    .adv-list:last-child {
+        width: 305px;
+        margin-left: 26px;
+    }
+
+    .coin {
+        margin-left: 82px;
+    }
+  
+    .lines {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+  
+    .footer {
+        &-line {
+            padding-top: 20px;
+            width: 95%;
+        }
+
+        &-block {
+            margin-left: 90px;
+            flex-wrap: wrap;
+
+           &__text {
+                margin-top: -8px;
+                margin-bottom: 18px;
+                font-size: 12px;
+            }
+
+            &__social {
+                width: 170px;
+            }
+
+            &__icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

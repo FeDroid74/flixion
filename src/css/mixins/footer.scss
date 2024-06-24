@@ -1,0 +1,29 @@
+.footer {
+    &-line {
+        filter: drop-shadow(0 0 10px rgba(7, 175, 239, 0.5));
+        padding-top: 50px;
+    }
+
+    &-block {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    
+        &__text {
+            padding-top: 7px;
+            color: #C5C5C5;
+        }
+    
+        &__social {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            padding-right: 30px;
+        }
+    
+        &__icon {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

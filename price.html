@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en, ru">
+  <head>
+    <!-- Метаинформация и стили -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/price/style.css">
+    <title>Тарифы | Flixion</title>
+  </head>
+  <body>
+    <!-- Модальное окно для пополнения баланса -->
+    <div id="myModal" class="modal">
+      <div class="modal__content">
+          <div class="modal__content-main">
+              <img class="modal__content-logo" src="img/logo.svg">
+              <a id="closeModalButton" href="#" class="modal__content-close">&times;</a>
+          </div>
+          <p class="modal__content-text"><span class="modal-number">+2</span> часа при первом пополнении</p>
+          <div class="modal__content-block">
+            <div class="modal__content-mark">
+              <img class="modal__content-image" src="img/phone.svg">
+            </div>
+            <div>
+              <label class="modal__content-label">
+                <input class="modal__content-input" type="tel" id="inputPhone" value="+7(___)___-__-__" name="telnum" required />
+              </label>
+            </div>
+          </div>
+          <div class="modal__content-block password">
+            <div class="modal__content-mark">
+              <img class="modal__content-image" src="img/balance-minimal.svg">
+            </div>
+            <div>
+              <label class="modal__content-label">
+                <input class="modal__content-input" placeholder="0,00 ₽" type="text" id="inputBalance" name="balance" required>
+              </label>
+            </div>
+          </div>
+          <a href="#" id="topUpBalanceButton" class="modal__content-button">Пополнить баланс</a>
+          <div class="modal__confirm">
+              <input type="checkbox" id="scales" checked />
+              <p class="modal__confirm-text">У меня имеется зарегистрированный аккаунт</p>
+          </div>
+          <a href="./registration.html" class="modal__link">Зарегистрироваться</a>
+      </div>
+    </div>
+    
+    <!-- Шапка сайта с навигацией -->
+    <header>
+      <div class="container">
+        <nav class="menu">
+          <ul class="menu-top">
+            <li class="menu-item"><a href="./index.html" class="menu-link"><img class="logo" src="img/logo.svg" alt="Logo" width="210" height="60"></a></li>
+            <li class="menu-item menu-burger-element"><a href="./price.html" class="menu-link">Тарифы</a></li>
+            <li class="menu-item menu-burger-element"><a href="./about.html" class="menu-link">О нас</a></li>
+            <li class="menu-item menu-burger-element"><a href="./contacts.html" class="menu-link">Контакты</a></li>
+            <li class="menu-item menu-burger-element"><a id="openModalButton" href="#" class="menu-link menu-button">Пополнить баланс</a></li>
+            <li class="menu-item"><div class="menu-burger">
+              <div class="menu-burger-bar"></div>
+              <div class="menu-burger-bar"></div>
+              <div class="menu-burger-bar"></div>
+            </div></li>
+          </ul>
+        </nav>
+        <nav class="menu-mobile">
+          <div class="container">
+           <ul class="menu-mobile-top">
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./price.html" class="menu-mobile-link">Тарифы</a></li>
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./about.html" class="menu-mobile-link">О нас</a></li>
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./contacts.html" class="menu-mobile-link">Контакты</a></li>
+           </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Раздел с тарифами -->
+    <section>
+      <div class="container">
+          <div class="price">
+            <div>
+                <div class="price-block__info">
+                    <h2 class="price-block__infotitle">Общий зал</h2>
+                    <div class="price-block__infotext">
+                        <h3>Час -<span> 70</span> ₽</h3>
+                    </div>
+                    <div class="price-block__infotext">
+                        <h3>3 часа -<span> 210</span> ₽</h3>
+                    </div>
+                    <div class="price-block__infotime">
+                        <hr color="#07AFEF" size="2">
+                        <h3 class="price-block__infotime__title">> 17:00</h3>
+                        <hr color="#07AFEF" size="2">
+                    </div>
+                    <div class="price-block__infotext">
+                        <h3>Час -<span> 90</span> ₽</h3>
+                    </div>
+                    <div class="price-block__infotext">
+                        <h3>3 часа -<span> 260</span> ₽</h3>
+                    </div>
+                </div>
+                <img class="price-secondaryblock" src="img/general-bg.png" alt="general">
+            </div>
+            <img class="price-mainblock" src="img/vip-bg.png" alt="vip">
+            <div class="price-block__info mainblock">
+                <h2 class="price-block__infotitle">VIP зал</h2>
+                <div class="price-block__infotext">
+                    <h3>Час -<span> 100</span> ₽</h3>
+                </div>
+                <div class="price-block__infotext">
+                    <h3>3 часа -<span> 270</span> ₽</h3>
+                </div>
+                <div class="price-block__infotime">
+                    <hr color="#07AFEF" size="2">
+                    <h3 class="price-block__infotime__title">> 17:00</h3>
+                    <hr color="#07AFEF" size="2">
+                </div>
+                <div class="price-block__infotext">
+                    <h3>Час -<span> 120</span> ₽</h3>
+                </div>
+                <div class="price-block__infotext">
+                    <h3>3 часа -<span> 350</span> ₽</h3>
+                </div>
+                <div class="price-block__infotext">
+                    <h3>5 часов -<span> 590</span> ₽</h3>
+                </div>
+            </div>
+            <img class="price-secondaryblock" src="img/bootcamp-bg.png" alt="bootcamp">
+            <div class="price-block__info">
+                <h2 class="price-block__infotitle">Буткемп</h2>
+                <div class="price-block__infotext">
+                    <h3>Час -<span> 110</span> ₽</h3>
+                </div>
+                <div class="price-block__infotext">
+                    <h3>3 часа -<span> 320</span> ₽</h3>
+                </div>
+                <div class="price-block__infotime">
+                    <hr color="#07AFEF" size="2">
+                    <h3 class="price-block__infotime__title">> 17:00</h3>
+                    <hr color="#07AFEF" size="2">
+                </div>
+                <div class="price-block__infotext">
+                    <h3>Час -<span> 130</span> ₽</h3>
+                </div>
+                <div class="price-block__infotext">
+                    <h3>3 часа -<span> 390</span> ₽</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел с линиями -->
+    <img class="lines" src="img/fifth-line.svg" alt="lines" width="1707">
+
+    <!-- Раздел с информацией о клубе -->
+    <section>
+      <div class="container">
+        <div class="info">
+          <p class="info__text">
+            Для геймера, который ищет уютный компьютерный клуб на Обручево, цены бывают очень важны, ведь не у всех есть мощный ПК, а тем более большие деньги на заоблачные цены для маленького клуба. Поэтому в Flixion мы установили минимальную стоимость часа, доступную каждому. Вы можете выбрать почасовую тарификацию, а лучше – полный пакет, тогда цена аренды игрового ПК за час будет самой ниже.
+          </p>
+          <p class="info__text">
+            Учитывая мощнейшие и ультрасовременные машины, высококачественные геймерские кресла от ведущих производителей, стоимость посещения игрового клуба в Москве кажется смехотворной. Более того, за эти деньги Вы становитесь целой командой, ведь с друзьями в нашем клубе разносить намного приятнее.
+          </p>
+          <p class="info__text">
+            Наши цены подойдут всем категориям игроков, которые предпочитают играть в более комфортной атмосфере. При этом лучше отдать предпочтение «VIP» залу. В таком случае у Вас не будет абсолютно ничего не будет отвлекать от игры, а также помимо дополнительного часового пакета в зоне предусмотрен шикарный бар.
+          </p>
+          <p class="info__text">
+            Мы не собираемся останавливаться на единственном клубе и будем развиваться во франшизное игровое сообщество, потому мы считаем, что на данный момент мы - одни из самых топовых клубов, о чем нам говорят наши первые и постоянные клиенты.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <img class="footer-line" src="img/footer-line.svg" alt="line">
+            <div class="footer-block">
+                <div>
+                    <p class="footer-block__text">© 2024 Все права защищены.</p>
+                </div>
+                <div class="footer-block__social">
+                    <img class="footer-block__icon" src="img/telegram.svg" alt="tg">
+                    <img class="footer-block__icon" src="img/youtube.svg" alt="yt">
+                    <img class="footer-block__icon" src="img/discord.svg" alt="ds">
+                    <img class="footer-block__icon" src="img/vk.svg" alt="vk">
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+
+  <!-- Подключение скриптов -->
+  <script src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/inputPhone.js"></script>
+  <script type="module" src="./src/js/topUpBalance.js"></script>
+  <script src="./src/js/burderMenu.js"></script>
+</html>

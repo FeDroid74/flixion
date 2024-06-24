@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en, ru">
+  <head>
+    <!-- Метаинформация и стили -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/form/style.css">
+    <title>Регистрация | Flixion</title>
+  </head>
+  <body>
+    <!-- Логотип сайта -->
+    <img class="logo" src="img/logo.svg">
+    
+    <!-- Форма регистрации -->
+    <div class="form-box">
+      <div class="form">
+        <h1 class="form__title">Регистрация</h1>
+        <form id="registrationForm" enctype="multipart/form-data">
+          
+          <!-- Поле ввода никнейма -->
+          <div class="form__block">
+            <div class="form__mark">
+              <img src="img/user.svg">
+            </div>
+            <div class="form__input">
+              <label>
+                <input type="text" name="nickname" required />
+              </label>
+            </div>
+          </div>
+          
+          <!-- Поле ввода телефона -->
+          <div class="form__block">
+            <div class="form__mark">
+              <img src="img/phone.svg">
+            </div>
+            <div class="form__input">
+              <label class="form__label">
+                <input type="tel" id="inputPhone" value="+7(___)___-__-__" name="telnum" required />
+              </label>
+            </div>
+          </div>
+          
+          <!-- Поле ввода email -->
+          <div class="form__block">
+            <div class="form__mark">
+              <img src="img/email.svg">
+            </div>
+            <div class="form__input">
+              <label>
+                <input type="email" name="email" required />
+              </label>
+            </div>
+          </div>
+          
+          <!-- Поле ввода пароля -->
+          <div class="form__block">
+            <div class="form__mark">
+              <img src="img/lock-open.svg">
+            </div>
+            <div class="form__input">
+              <label>
+                <input type="password" name="password" required />
+              </label>
+            </div>
+          </div>
+          
+          <!-- Поле подтверждения пароля -->
+          <div class="form__block">
+            <div class="form__mark">
+              <img src="img/lock-open.svg">
+            </div>
+            <div class="form__input">
+              <label>
+                <input type="password" name="confirm_password" required />
+              </label>
+            </div>
+          </div>
+          
+          <!-- reCAPTCHA -->
+          <div class="g-recaptcha" data-sitekey="6LeJTf0pAAAAAN1T4zNw1TWz6yN3-sNLn1yPKQMJ"></div><br>
+          
+          <!-- Сообщение о результате -->
+          <div class="result" id="result"></div>
+          
+          <!-- Кнопка отправки формы -->
+          <button class="form__button" type="submit">Зарегистрироваться</button><br>
+          
+          <!-- Ссылка на страницу авторизации -->
+          <a href="./authorization.html" class="form__link">Войти</a>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Фон страницы -->
+    <div class="wallpaper"></div>
+  </body>
+  
+  <!-- Подключение скриптов -->
+  <script type="module" src="./src/js/registration.js"></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <script type="module" src="./src/js/inputPhone.js"></script>
+</html>

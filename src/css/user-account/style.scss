@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0D1217;
+}
+
+span {
+    font-size: 22px;
+    color: #FFF;
+}
+
+a {
+    color: #FFF;
+    font-size: 20px;
+    border: 2px solid #07AFEF;
+    border-radius: 30px;
+    text-decoration: none;
+	transition: all .3s ease-in-out;
+}
+
+a:hover {
+	background-color: #07AFEF;
+	color: #0D1217;
+	transition: all .3s ease-in-out;
+}
+
+li, ul {
+	list-style: none;
+}
+
+.container {
+    max-width: 1510px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.menu-top {
+    width: 1480px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &__logo {
+        width: 210px;
+        height: 44px;
+        margin: 20px 10px;
+    }
+
+    &__elements {
+        display: flex;
+        align-items: center;
+
+        &-option {
+            margin-right: 60px;
+        }
+
+        &-logout {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+        }
+    }
+}
+
+.payment {
+    display: flex;
+    margin-top: 60px;
+
+    &__middle-panel {
+        width: 374px;
+        height: 352px;
+        background: #161C23;
+        border-radius: 30px;
+        margin-left: 62px;
+
+        &__elements {
+            width: 260px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 52px;
+
+            &-title {
+                display: flex;
+                height: 88px;
+                margin-bottom: 10px;
+                line-height: 2em;
+            }
+
+            &-button {
+                padding: 12px 56px;
+                margin-top: 18px;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    &__large-panel {
+        width: 868px;
+        height: 352px;
+        background: #161C23;
+        border-radius: 30px;
+        margin-left: 112px;
+
+        &__elements {
+            width: 190px;
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 30px 40px;
+            margin-left: 100px;
+
+            &-title {
+                margin-bottom: 20px;
+                line-height: 2em;
+            }
+
+            &-button {
+                padding: 12px 76px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+.price {
+    color: #07AFEF;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+}
+
+.option {
+    width: 1354px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-left: 60px;
+
+    &__small-panel {
+        width: 381px;
+        height: 239px;
+        background: #161C23;
+        border-radius: 30px;
+		cursor: pointer;
+		transition: all .3s;
+
+        &__elements {
+            width: 202px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 25px 40px;
+            text-align: center;
+            margin-left: 50px;
+
+            &-icon {
+                width: 115px;
+                height: 115px;
+                margin-bottom: 10px;
+            }
+
+			&-title {
+				line-height: 1.4em;
+			}
+        }
+
+		&:hover {
+			filter: drop-shadow(0 0 25px rgba(7, 175, 239, 0.3));
+			transition: all .3s;
+		}
+    }
+}
+
+// Стили для модального окна
+.modal {
+    display: none; // Скрыто по умолчанию
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.5s;
+
+    &__content {
+        background: #161C23;
+        filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.5));
+        border-radius: 30px;
+        padding: 32px 38px;
+        text-align: center;
+        margin: 15% auto;
+        width: 50%;
+        animation: slideIn 0.5s;
+
+        &-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        &-text {
+            margin-top: 20px;
+        }
+
+        &-computer, &-game {
+            color: #FFF;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                color: #07AFEF;
+                transition: all .3s;
+            }
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            &-label {
+                font-size: 18px;
+                color: #FFF;
+            }
+
+            select, &-textarea, &-button {
+                width: 90%;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                box-sizing: border-box;
+                background: #0D1217;
+                color: #FFF;
+                font-size: 16px;
+            }
+
+            &-textarea {
+                height: 100px;
+                resize: none;
+            }
+
+            &-button {
+                width: 230px;
+                color: #FFF;
+                border: 2px solid #07AFEF;
+                background-color: #161C23;
+                border-radius: 30px;
+                
+                text-decoration: none;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: #07AFEF;
+                    color: #161C23;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+select {
+    width: 20%;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: #161C23;
+    border: 1px solid #07AFEF;
+    position: relative;
+    padding-right: 30px;
+
+    &:focus {
+        border-color: #07AFEF;
+    }
+
+    &::after {
+        content: '▼';
+        font-size: 12px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        pointer-events: none;
+        transform: translateY(-50%);
+    }
+}
+
+option {
+    border: none;
+    outline: none;
+    background: #161C23;
+    color: #FFF;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px);}
+    to {transform: translateY(0);}
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en, ru">
+  <head>
+    <!-- Метаинформация и стили -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/about/style.css">
+    <title>О нас | Flixion</title>
+  </head>
+  <body>
+    <!-- Модальное окно для пополнения баланса -->
+    <div id="myModal" class="modal">
+      <div class="modal__content">
+          <div class="modal__content-main">
+              <img class="modal__content-logo" src="img/logo.svg">
+              <a id="closeModalButton" href="#" class="modal__content-close">&times;</a>
+          </div>
+          <p class="modal__content-text"><span class="modal-number">+2</span> часа при первом пополнении</p>
+          <div class="modal__content-block">
+            <div class="modal__content-mark">
+              <img class="modal__content-image" src="img/phone.svg">
+            </div>
+            <div>
+              <label class="modal__content-label">
+                <input class="modal__content-input" type="tel" id="inputPhone" value="+7(___)___-__-__" name="telnum" required />
+              </label>
+            </div>
+          </div>
+          <div class="modal__content-block password">
+            <div class="modal__content-mark">
+              <img class="modal__content-image" src="img/balance-minimal.svg">
+            </div>
+            <div>
+              <label class="modal__content-label">
+                <input class="modal__content-input" placeholder="0,00 ₽" type="text" id="inputBalance" name="balance" required>
+              </label>
+            </div>
+          </div>
+          <a href="#" id="topUpBalanceButton" class="modal__content-button">Пополнить баланс</a>
+          <div class="modal__confirm">
+              <input type="checkbox" id="scales" checked />
+              <p class="modal__confirm-text">У меня имеется зарегистрированный аккаунт</p>
+          </div>
+          <a href="./registration.html" class="modal__link">Зарегистрироваться</a>
+      </div>
+    </div>
+
+    <!-- Шапка сайта с навигацией -->
+    <header>
+      <div class="container">
+        <nav class="menu">
+          <ul class="menu-top">
+            <li class="menu-item"><a href="./index.html" class="menu-link"><img class="logo" src="img/logo.svg" alt="Logo" width="210" height="60"></a></li>
+            <li class="menu-item menu-burger-element"><a href="./price.html" class="menu-link">Тарифы</a></li>
+            <li class="menu-item menu-burger-element"><a href="./about.html" class="menu-link">О нас</a></li>
+            <li class="menu-item menu-burger-element"><a href="./contacts.html" class="menu-link">Контакты</a></li>
+            <li class="menu-item menu-burger-element"><a id="openModalButton" href="#" class="menu-link menu-button">Пополнить баланс</a></li>
+            <li class="menu-item"><div class="menu-burger">
+              <div class="menu-burger-bar"></div>
+              <div class="menu-burger-bar"></div>
+              <div class="menu-burger-bar"></div>
+            </div></li>
+          </ul>
+        </nav>
+        <nav class="menu-mobile">
+          <div class="container">
+           <ul class="menu-mobile-top">
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./price.html" class="menu-mobile-link">Тарифы</a></li>
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./about.html" class="menu-mobile-link">О нас</a></li>
+             <li class="menu-mobile-item menu-mobile-burger-element"><a href="./contacts.html" class="menu-mobile-link">Контакты</a></li>
+           </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Раздел с информацией о клубе -->
+    <section>
+        <div class="container">
+          <div class="info-block">
+            <div class="info-blockitem">
+                <img class="info-blockitem__pic" src="img/club-photo.png" alt="club">
+                <div class="info-blockitem__textblock">
+                    <p class="info-blockitem__text">Мы являемся <span>самым уютным</span> компьютерным клубом, по мнению PlayStation экспертов.</p>
+                    <p class="info-blockitem__text">Наш клуб работает в условиях поддержания <span>современных</span> стандартов в игровой сфере для плавной картинки и быстрого запуска.</p>
+                    <p class="info-blockitem__text">Подкрепляем доверие наших клиентов <span>качеством</span> игровых мест <br>и <span>профессиональной</span> работой <br>в области кибер-индустрии.</p>
+                    <p class="info-blockitem__text">У нас каждый второй клиент чувствует себя как дома с <span>мощным</span> устройством в руках, которое может показать <span>высокую</span> производительность.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел с линиями -->
+    <img class="lines" src="img/fourth-lines.svg" alt="lines" width="1707">
+
+    <!-- Раздел с преимуществами клуба -->
+    <section>
+      <div class="container">
+        <div class="adv-list">
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/laptop.svg" alt="laptop">
+            <h3 class="adv-list__item-title">Большое количество мест</h3>
+          </div>
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/headset.svg" alt="headset">
+            <h3 class="adv-list__item-title">Лучшая периферия</h3>
+          </div>
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/memory-computer.svg" alt="memory-computer">
+            <h3 class="adv-list__item-title">Топовое <br>железо</h3>
+          </div>
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/cup-soda.svg" alt="cup-soda">
+            <h3 class="adv-list__item-title">Огромный ассортимент бара</h3>
+          </div>
+        </div>
+        <div class="adv-list">
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/map-pin.svg" alt="map-pin">
+            <h3 class="adv-list__item-title">Удобное местоположение</h3>
+          </div>
+          <div class="adv-list__item">
+            <img class="adv-list__item-icon" src="img/clock.svg" alt="clock">
+            <h3 class="adv-list__item-title">Работаем круглосуточно</h3>
+          </div>
+          <div class="adv-list__item coin">
+            <img class="adv-list__item-icon" src="img/coin-dollar.svg" alt="coin">
+            <h3 class="adv-list__item-title">Ивенты и низкие цены</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <img class="footer-line" src="img/footer-line.svg" alt="line">
+            <div class="footer-block">
+                <div>
+                    <p class="footer-block__text">© 2024 Все права защищены.</p>
+                </div>
+                <div class="footer-block__social">
+                    <img class="footer-block__icon" src="img/telegram.svg" alt="tg">
+                    <img class="footer-block__icon" src="img/youtube.svg" alt="yt">
+                    <img class="footer-block__icon" src="img/discord.svg" alt="ds">
+                    <img class="footer-block__icon" src="img/vk.svg" alt="vk">
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+
+  <!-- Подключение скриптов -->
+  <script src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/inputPhone.js"></script>
+  <script type="module" src="./src/js/topUpBalance.js"></script>
+  <script src="./src/js/burderMenu.js"></script>
+</html>

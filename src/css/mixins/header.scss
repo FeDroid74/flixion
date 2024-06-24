@@ -1,0 +1,100 @@
+.menu {
+	padding-top: 54px;
+
+    &-top {
+        text-align: right;
+        margin-right: -60px;
+    }
+
+    &-item {
+        display: inline-block;
+        margin-right: 60px;
+
+        &:nth-child(5) {
+            margin-right: 0;
+        }
+    
+        &:first-child {
+            float: left;
+            margin-top: -20px;
+        }
+    }
+
+    &-link {
+        text-decoration: none;
+        font-size: 18px;
+        color: #FFF;
+        transition: all .3s;
+
+        &:hover {
+            color: #07AFEF;
+            transition: all .3s;
+        }
+    }
+
+    &-button {
+        padding: 12px 33px;
+        border: 2px solid #07AFEF;
+        border-radius: 30px;
+        transition: all .3s;
+
+        &:hover {
+            background-color: #07AFEF;
+            color: #000;
+            transition: all .3s;
+        }
+    }
+
+    &-burger { 
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &-bar {
+            color: #07AFEF;
+            display: block;
+            width: 25px;
+            height: 4px;
+            background-color: #07AFEF;
+            margin: 4px 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &.active &-bar:first-child {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        &.active &-bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        &.active &-bar:last-child {
+            transform: rotate(-45deg) translate(6.5px, -6px);
+        }
+
+        &-element {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+    }
+
+    &-mobile {
+        display: none;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        width: 480px;
+
+        &-top { 
+            list-style: none;
+        }
+
+        &-burger-element {
+            text-align: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        &-link {
+            text-decoration: none;
+        }
+    }
+}

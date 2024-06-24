@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700&display=swap');
+
+@import "../mixins/modal";
+@import "../mixins/header";
+@import "../mixins/footer";
+
+* {
+	margin: 0;
+	padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 74px;
+    font-weight: 600;
+}
+
+span {
+    color: #07AFEF;
+    font-weight: 500; 
+}
+
+.lines {
+    margin: 107px 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+	max-width: 1180px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 12px;
+}
+
+.info {
+    display: flex;
+    margin: 0 auto;
+    width: 1130px;
+    padding-top: 90px;
+    filter: drop-shadow(0 0 40px rgba(7, 175, 239, 0.5));
+    position: relative;
+    text-align: center;
+
+    &-contacts {
+        position: absolute;
+        bottom: 35%;
+        right: 55%;
+    }
+
+    &-add {
+        position: absolute;
+        bottom: 35%;
+        right: 10%;
+    }
+
+    & h2 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        text-align: center;
+        color: #FFF;
+    }
+
+    & p {
+        padding: 76px 0;
+        width: 400px;
+        color: #FFF;
+        font-size: 20px;
+    }
+
+    & span {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    & h3 {
+        position: absolute;
+        color: #FFF;
+        bottom: 18%;
+        right: 25%;
+        font-size: 28px;
+    }
+}
+
+@media all and (max-width: 534px) {
+    .container {
+        max-width: 534px;
+    }
+  
+    h2 {
+        font-size: 32px;
+    }
+  
+    span {
+        font-size: 22px;
+    }
+  
+    .menu {
+        margin-left: 22px;
+        width: 300px;
+
+        &-button {
+            display: none;
+        }
+
+        &-burger {
+            margin-top: -32px;
+            display: block;
+        }
+
+        &-burger-element {
+            display: none;
+        }
+
+        &-mobile {
+            &.show {
+                position: absolute;
+                display: block;
+                transform: translateY(0);
+                left: 0;
+                width: 220%;
+                height: 440px;
+                z-index: 1;
+                padding: 10px;
+            }
+
+            &-top {
+                margin-top: 10px;
+                position: absolute;
+            }
+        }
+    }
+
+    .logo {
+        width: 150px;
+        height: 30px;
+    }
+    
+    .info {
+        margin-top: -18%;
+        width: 665px;
+
+        &-bg {
+            margin-top: 130px;
+            margin-left: -74px;
+            width: 516px;
+            height: 404px;
+            transform: rotate(270deg);
+            padding: 14px 0;
+        }
+        
+        &-contacts {
+            bottom: 38%;
+        }
+
+        & p {
+            padding: 40px 0;
+            width: 222px;
+            font-size: 14px;
+        }
+
+        &-add {
+            bottom: 3%;
+            right: 55%;
+        }
+
+        & span {
+            font-size: 18px;
+        }
+
+        & h2 {
+            font-size: 32px;
+        }
+
+        & h3 {
+            display: none;
+        }
+    }
+  
+    .lines {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+  
+    .map {
+        margin-left: 8px;
+        width: 336px;
+    }
+  
+    .footer {
+        &-line {
+            width: 95%;
+        }
+
+        &-block {
+            margin-left: 90px;
+            flex-wrap: wrap;
+
+           &__text {
+                margin-top: -8px;
+                margin-bottom: 18px;
+                font-size: 12px;
+            }
+
+            &__social {
+                width: 170px;
+            }
+
+            &__icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
